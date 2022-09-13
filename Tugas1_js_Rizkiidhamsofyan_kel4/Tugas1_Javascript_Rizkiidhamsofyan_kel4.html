@@ -1,0 +1,70 @@
+<script language="javascript">
+    // Deklarasi
+    var pegawai ="Ridwan"
+    let jabatan ="Manager"
+    let status ="Menikah"
+    let gapok =0
+
+    if(jabatan=='Manager'){
+        gapok = 15000000 ;
+    }else if (jabatan=='Assisten Manager'){
+        gapok = 10000000 ;
+    }else if (jabatan=='staff'){
+        gapok = 5000000 ;
+    }else {
+        gapok = 0;
+    }
+    
+    const tunjanganJabatan = 0.15 * gapok ;
+    const bpjs = 0.1 * gapok;
+    // Ternary
+    tunjaganKeluarga = (status == 'Menikah') ? 0.2 * gapok : 0;
+
+    let totalGaji = gapok + tunjanganJabatan + tunjaganKeluarga ;
+
+    // Algoritma
+    document.write("<table align='center' border='1' cellpadding='10' cellspacing='0' width='40%' >" + 
+        "<thead>" + 
+            "<tr>" + 
+                "<th>" + "Pegawai" + "</th>" + 
+                "<th>" + pegawai + "</th>" +
+            "</tr>" +
+            "<tr>" + 
+                "<th>" + "Jabatan" + "</th>" + 
+                "<th>" + jabatan + "</th>" +
+            "</tr>" +
+            "<tr>" + 
+                "<th>" + "Status" + "</th>" + 
+                "<th>" + status + "</th>" +
+            "</tr>" +
+            "<tr>" + 
+                "<th>" + "Data" + "</th>" + 
+                "<th>" + "Keterangan" + "</th>" +
+            "</tr>" +
+        "</thead>");
+    document.write("<tbody>" + 
+            "<tr>" +
+                "<td>" + "Gaji pokok" + "</td>" +
+                "<td>" + "Rp. "+ gapok + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>" + "Tunjangan Jabatan" +
+                "<td>" + "Rp. "+ tunjanganJabatan + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>" + "BPJS" + "</td>" +
+                "<td>" + "Rp. "+ bpjs + "</td>" +
+            "</tr>" +
+            "<tr>" +
+                "<td>" + "tunjangan keluarga " + "</td>" +
+                "<td>" + "Rp. "+ tunjaganKeluarga + "</td>" +
+            "</tr>" +
+            "<tfoot>" +
+                "<tr>" +
+                    "<td>" + "total gaji " + "</td>" +
+                    "<td>" + "Rp. "+totalGaji + "</td>" +
+                 "</tr>" + 
+            "</tfoot>" +
+            "</table>");
+
+</script>
