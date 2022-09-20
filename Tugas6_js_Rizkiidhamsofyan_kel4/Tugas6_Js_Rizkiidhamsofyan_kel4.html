@@ -1,0 +1,60 @@
+<h3 align="center">Skala Gempa Bumi</h3>
+    <table align="center" border="1" cellpadding="10" cellspacing="0"
+    width="50%">
+        <thead>
+            <tr bgcolor="green">
+                <th>No</th>
+                <th>Lokasi</th>
+                <th>Skala</th>
+                <th>Dampak</th>
+            </tr>
+        </thead>
+        <tbody id="tbl">
+        </tbody>
+    </table>
+    <script>
+        let no = 1;
+        class Gempa{
+            constructor( lokasi, skala){
+                this.lokasi = lokasi;
+                this.skala = skala;
+            }
+
+            getDampak(){
+                if(this.skala <= 2)this.dampak = 'Dampak Tidak terasa';
+                else if(this.skala >=2 && this.skala <=4)this.dampak ='Dampaknya Bangunan Retak - retak';
+                else if(this.skala >=4 && this.skala <=6)this.dampak ='Dampaknya Bangunan bangunan roboh';
+                else if(this.skala > 6)this.dampak ='Berpotensi Tsunami';
+                else this.dampak ='';
+
+                return this.dampak;
+            }
+
+            infoGempa(){
+                document.getElementById('tbl').innerHTML += 
+            `<tr>
+                <td>${no++}</td>
+                <td>${this.lokasi}</td>
+                <td>${this.skala} ricther</td>
+                <td>${this.getDampak()}</td>
+            </tr>`
+            }
+           
+        }
+        g1 = new Gempa('Mentawai', 6.1 );
+        g2 = new Gempa('Valdivia, kota di selatan Chilii', 9.5 );
+        g3 = new Gempa('Aceh', 8.6 );
+        g4 = new Gempa('Manado', 8.0 );
+        g5 = new Gempa('Padang', 8.4 );
+        g6 = new Gempa('Bengkulu', 8.4 );
+        g7 = new Gempa('Nias', 8.5 );
+        g8 = new Gempa('Banten', 9.0 );
+        g9 = new Gempa('Pangandaran', 7.7 );
+        g10 = new Gempa('Jogjakarta', 5.9 );
+        
+        g1.infoGempa();  g4.infoGempa();  g7.infoGempa();  g10.infoGempa();
+        g2.infoGempa();  g5.infoGempa();  g8.infoGempa();
+        g3.infoGempa();  g6.infoGempa();  g9.infoGempa();
+
+       
+    </script>
